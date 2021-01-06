@@ -10,10 +10,20 @@
 
       <div class="movie-item__controls row no-gutters">
         <div class="col pr-2">
-          <BButton size="md" block variant="outline-light">Edit</BButton>
+          <BButton 
+            size="md" 
+            block 
+            variant="outline-light"
+            @click="emitShowInfoModalEvent"
+          >Info</BButton>
         </div>
         <div class="col pl-2">
-          <BButton @click="emitRemoveEvent" size="md" block variant="outline-light">Remove</BButton>
+          <BButton 
+            @click="emitRemoveEvent" 
+            size="md" 
+            block 
+            variant="outline-light"
+          >Remove</BButton>
         </div>
       </div>
     </div>
@@ -39,6 +49,9 @@ export default {
   methods: {
     emitRemoveEvent() {
       this.$emit('removeItem', { id: this.movie.imdbID, title: this.movie.Title })
+    },
+    emitShowInfoModalEvent() {
+      this.$emit('showModal', this.movie.imdbID)
     }
   }
 }
