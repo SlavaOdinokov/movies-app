@@ -2,6 +2,7 @@
   <div id="app">
     <Loader />
     <PosterBg :poster="posterBg" />
+    <Notification />
     <Header />
     <MoviesList :list="moviesList" @changePoster="onChangePoster" />
     <MoviesPagination 
@@ -20,6 +21,7 @@ import PosterBg from '@/components/PosterBg'
 import MoviesPagination from '@/components/MoviesPagination'
 import Loader from '@/components/Loader'
 import Header from '@/components/Header'
+import Notification from '@/components/Notification'
 
 export default {
   name: "App",
@@ -28,7 +30,8 @@ export default {
     PosterBg,
     MoviesPagination,
     Loader,
-    Header
+    Header,
+    Notification
   },
   data: () => ({
     posterBg: ''

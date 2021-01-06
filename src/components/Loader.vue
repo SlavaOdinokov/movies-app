@@ -9,7 +9,6 @@ import { mapGetters } from 'vuex'
 
 export default {
   name: "Loader",
-  props: {},
   computed: {
     ...mapGetters(['isShowLoader'])
   }
